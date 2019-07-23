@@ -16,11 +16,14 @@ export class ListsComponent implements OnInit {
   pagination: Pagination;
   likesParam: string;
 
+  // tslint:disable-next-line: max-line-length
   constructor(private authService: AuthService, private userService: UserService, private route: ActivatedRoute, private alertify: AlertifyService) { }
 
   ngOnInit() {
     this.route.data.subscribe(data => {
+      // tslint:disable-next-line: no-string-literal
       this.users = data['users'].result;
+      // tslint:disable-next-line: no-string-literal
       this.pagination = data['users'].pagination;
     });
     this.likesParam = 'Likers';
